@@ -1,8 +1,6 @@
 <?php
 session_start();
 
-
-
 if(isset($_POST['reset'])){
     $_SESSION['choosed']="0";
 }elseif(isset($_POST['back'])){

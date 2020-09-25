@@ -16,7 +16,7 @@ if(isset($_SESSION['choosed'])){
 }
 
 
-if(!isset($_POST['value'])){
+if(!isset($_POST['value'])||$_POST['value']==NULL){
     die(json_encode(zar($array)));
 }
 else

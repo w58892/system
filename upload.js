@@ -84,24 +84,9 @@ document.getElementById('btn_update').addEventListener("click",function(){
         return resp.json();
     })
     .then((response) => {
-/*
-        document.getElementById("errorProcesor").innerHTML = "";
-        document.getElementById("errorProcesorURL").innerHTML = "";
-        document.getElementById("errorMotherboard").innerHTML = "";
-        document.getElementById("errorMotherboardURL").innerHTML = "";
-        document.getElementById("errorGraphic").innerHTML = "";
-        document.getElementById("errorGraphicURL").innerHTML = "";
-        document.getElementById("errorRAM").innerHTML = "";
-        document.getElementById("errorRAMURL").innerHTML = "";
-        document.getElementById("errorDisc").innerHTML = "";
-        document.getElementById("errorDiscURL").innerHTML = "";
-        document.getElementById("errorPSU").innerHTML = "";
-        document.getElementById("errorPSUURL").innerHTML = "";
-        document.getElementById("Price").innerHTML = "";
-*/
+
 
             alert(response.success);
-            //alert(document.getElementById("ID").value);
 
     }) 
     .catch((error) => {

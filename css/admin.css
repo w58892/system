@@ -1,0 +1,86 @@
+
+
+body{
+    background-color: #0b0c10;
+    margin: 0 auto; 
+    text-align: center;
+    font-family: Arial;
+    margin:0 auto;
+	justify-content: center;
+    color: azure;
+
+}
+
+#computer{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;    
+    margin:0 auto;
+
+	justify-content: center;
+}
+
+h1{
+    display: flex;
+    max-width: 1200px;    
+    margin:50px auto;
+
+	justify-content: center;
+}
+
+input:not(.ID),#labelID {
+    width: 400px;
+    height: 50px;
+    margin:10px
+}
+
+label {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+.divID{
+    display: flex;
+    flex-direction: row;
+    width: 400px;
+    height: 50px;
+    justify-content:space-between;
+}
+
+.divID input{
+    width: 120px;
+    height: 50px;
+}
+
+header{
+    width:100%;
+    text-align: left;
+    margin-top:20px;
+display: flex;
+}
+
+header a{
+    color: azure;
+    margin-left: 15px;
+    text-decoration: none;
+
+}
+nav{
+    margin-left: auto;
+    text-align: right;
+  }
+
+  nav a{
+    
+    color: azure;
+    margin-right: 15px;
+    text-decoration: none;
+  }
+
+  #btn_computerID,#btn_update{
+    background-color: #ffd740;
+
+    border: 2px solid #444;
+
+  }

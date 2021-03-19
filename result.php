@@ -8,13 +8,13 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/result.css"> 
-  <title>Document</title>
+  <title>Doradca komputerowy</title>
 </head>
 <body>
   
@@ -26,6 +26,10 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
   use Rubix\ML\Persisters\Filesystem;
   use Rubix\ML\Datasets\Unlabeled;
 
+
+
+
+  
 $place = $what = $game = $resolution = $FPS = $graphic = "-";
 
 
@@ -52,7 +56,7 @@ $place = $what = $game = $resolution = $FPS = $graphic = "-";
 $samples = array($place, $what, $game, $resolution, $FPS, $graphic);
 $samples = array($samples);
 
-  $estimator = PersistentModel::load(new Filesystem('example.model'));
+  $estimator = PersistentModel::load(new Filesystem('tree.model'));
 
   $dataset = new Unlabeled($samples);
   $predictions = $estimator->predict($dataset);

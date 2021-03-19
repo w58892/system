@@ -13,7 +13,7 @@ document.getElementById('btn_computerID').addEventListener("click",function(){
 
             // /console.log(response.email);
             if(response.ID !="wrong"){
-            document.getElementById("ID").value = response.ID;
+           // document.getElementById("ID").value = response.ID;
             document.getElementById("Procesor").value = response.procesor;
             document.getElementById("ProcesorURL").value = response.procesorurl;
             document.getElementById("Motherboard").value = response.motherboard;
@@ -28,7 +28,7 @@ document.getElementById('btn_computerID').addEventListener("click",function(){
             document.getElementById("PSUURL").value = response.PSUurl;
             document.getElementById("Price").value = response.price;
             }else{
-                document.getElementById("ID").value = "ID";
+               // document.getElementById("ID").value = "ID";
                 document.getElementById("Procesor").value = "";
                 document.getElementById("ProcesorURL").value = "";
                 document.getElementById("Motherboard").value = "";
@@ -57,7 +57,7 @@ document.getElementById('btn_update').addEventListener("click",function(){
 	
 	form=new FormData(); 
     
-    form.append("ID",document.getElementById("ID").value);
+    form.append("ID",document.getElementById("computerID").value);
     form.append("Procesor",document.getElementById("Procesor").value);
     form.append("ProcesorURL",document.getElementById("ProcesorURL").value);
     form.append("Motherboard",document.getElementById("Motherboard").value);
@@ -107,10 +107,29 @@ document.getElementById('btn_update').addEventListener("click",function(){
     .catch((error) => {
         console.log(error);
     })
+});
 
+document.getElementById('btn_upload').addEventListener("click",function(){
+	var plik=document.getElementById("plik").files[0];
+	
+	var formularz=new FormData(); //tworzymy nowy formularz do wysłania
+	formularz.append("plik", plik); //dodajemy do formularza pole z naszym plikiem
 
+    fetch('generator.php', {
+        method: 'POST',
+      //  headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body:  formularz
+    })
+        .then((resp) => {
+            console.log(resp);
+            return resp.json();
+        })
+        .then((response) => {
 
-
-
+            console.log(response);
+        }
+        ) .catch(error => {
+            console.error(error)
+          })
 
 });

@@ -15,7 +15,7 @@ require_once("User.php");
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>Wypożyczalnia przyczep kempingowych</title>
+    <title>Doradca komputerowy</title>
 
     <link rel="stylesheet" href="css/login.css">
 

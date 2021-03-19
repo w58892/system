@@ -6,9 +6,20 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
     $response = [];
 
 
-  if (trim($_POST['ID']) == "ID"){
+    $ID = trim($_POST['ID']);
 
-  $sth = $db->prepare('INSERT INTO computers VALUE (NULL,:procesor,:procesorurl,:motherboard,:motherboardurl,:graphic,:graphicurl,:RAM,:RAMurl,:disc,:discurl,:PSU,:PSUurl,:price)');
+    $sth = $db->prepare('SELECT * FROM computers WHERE ID=:ID limit 1');
+    $sth->bindValue(':ID', $ID, PDO::PARAM_INT);
+    $sth->execute();
+    $comp = $sth->fetch(PDO::FETCH_ASSOC);
+
+    if ($comp == true){
+
+
+  //if (trim($_POST['ID']) == "ID"){
+
+  $sth = $db->prepare('INSERT INTO computers VALUE (:ID,:procesor,:procesorurl,:motherboard,:motherboardurl,:graphic,:graphicurl,:RAM,:RAMurl,:disc,:discurl,:PSU,:PSUurl,:price)');
+  $sth->bindValue(':ID', trim($_POST['ID']), PDO::PARAM_INT);
   $sth->bindValue(':procesor', trim($_POST['Procesor']), PDO::PARAM_STR);
   $sth->bindValue(':procesorurl', trim($_POST['ProcesorURL']), PDO::PARAM_STR);
   $sth->bindValue(':motherboard', trim($_POST['Motherboard']), PDO::PARAM_STR);

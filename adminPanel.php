@@ -1,13 +1,15 @@
-<?php
-echo '<?xml version="1.0" encoding="iso-8859-2"?>';
-?>
-<html>
-    <head>
-        <title>Upload plików w PHP</title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="css/admin.css" />
-    </head>
-    <body>
+
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doradca komputerowy</title>
+    <link rel="stylesheet" type="text/css" href="css/admin.css" />
+
+</head>
+<body>
+    
 
     <header>
   <a id="href" href="index.php">Strona główna</a>
@@ -34,11 +36,19 @@ echo '<?xml version="1.0" encoding="iso-8859-2"?>';
     <label id="labelID">ID
         <div class="divID">
         <input type="text" id="computerID" class="ID"  placeholder="ID">
-        <input type="button" id="btn_computerID"  class="ID" value="komputer">
+        <input type="button" id="btn_computerID"  class="ID" value="Pobierz">
 
-        <input type="text" id="ID" name="ID" value="ID"  class="ID" placeholder="ID" disabled >
         </div>
     </label>
+
+
+    <label id="labelPrice">
+            Cena
+            <input type="text" id="Price" placeholder="Cena">
+            <div>
+            </div>
+            <div id="errorPrice"></div>
+        </label>
 
         <label id="labelProcesor">
         Procesor
@@ -136,19 +146,21 @@ echo '<?xml version="1.0" encoding="iso-8859-2"?>';
         </label>
 
         
-        <label id="labelPrice">
-            Cena
-            <input type="text" id="Price" placeholder="Cena">
-            <div>
-            </div>
-            <div id="errorPrice"></div>
-        </label>
+
             <input type="button" id="btn_update" class="send" value="Modyfikuj">
+  </div>
+<div class="upload">
+    <label class="custom-file-upload">
+    <input type="file" id="plik"/>
+    <p>Upload bazy wiedzy</p>
+    </label>
+    <input type="button" value="Wygeneruj drzewo" id="btn_upload">
+</div>
+  
 
-    </div>
 
 
-
+     
 
 
 
